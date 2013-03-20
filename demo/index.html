@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>KarmicBee - imageScroller demo</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.imageScroller.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0 auto;
+			}
+			.message, .footer { font-size: 12px; margin: 0 auto; width: 100%; text-align: center; padding: 10px 0; }
+			.message { margin: 0 0 20px; background-color: lightgray; border-bottom: 1px solid; }
+			.img-container {
+				width: 800px;
+				height: 400px;
+				overflow: hidden;
+				border: 1px solid lightgray;
+			}
+			#img-wrapper { height: 100%}
+			.tiles-container {
+				border: 1px solid lightgray;
+				height: 100px;
+			    overflow: hidden;
+			    width: 800px;
+			}
+			#tiles-wrapper, #img-wrapper {
+				overflow: hidden;
+				position: relative;
+			}
+			#tiles-wrapper > a {
+				float: left;
+			}
+			#img-wrapper { width:100%; }
+			
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="message">This is a demo of imageScroller. for more details, visit: <a href="http://karmicbee.org">http://karmicbee.org</a></div>
+			
+			<div class="tiles-container">
+				<div class="tiles-wrapper" id="tiles-wrapper">
+					<a href="#1"><img src="images/thumbs/1.jpg" /></a>
+					<a href="#2"><img src="images/thumbs/2.jpg" /></a>
+					<a href="#3"><img src="images/thumbs/3.jpg" /></a>
+					<a href="#4"><img src="images/thumbs/4.jpg" /></a>
+					<a href="#5"><img src="images/thumbs/5.jpg" /></a>
+					<a href="#6"><img src="images/thumbs/6.jpg" /></a>
+					<a href="#7"><img src="images/thumbs/7.jpg" /></a>
+					<a href="#8"><img src="images/thumbs/8.jpg" /></a>
+					<a href="#9"><img src="images/thumbs/9.jpg" /></a>
+					<a href="#10"><img src="images/thumbs/10.jpg" /></a>
+					<a href="#11"><img src="images/thumbs/11.jpg" /></a>
+				</div>
+			</div>
+
+			<div class="img-container">
+				<div class="img-wrapper" id="img-wrapper">
+					<img src="images/snow-leopard-wallpaper.jpg" width="100%" id="hero-image"/>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				(function($){
+					window.onload=function() {
+						// below line is to vertical scroll big image.
+						$("#img-wrapper").imageScroller({scroll:"vertical"});
+						$("#tiles-wrapper").imageScroller({scroll:"horizontal"});
+					}
+					
+				})(jQuery)
+			</script>
+
+			<div class="footer">
+				Copyright &copy; 2013 pMan. All rights reserved.
+			</div>
+		</div>
+	</body>
+</html>
+
