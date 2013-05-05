@@ -36,7 +36,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<div class="message">This is a demo of imageScroller. for more details, visit: <a href="http://karmicbee.org">http://karmicbee.org</a></div>
+			<div class="message">This is a demo of imageScroller. for more details, visit: <a href="http://blog.karmicbee.org/projects/jquery-image-scroller/">http://karmicbee.org</a></div>
 			
 			<div class="tiles-container">
 				<div class="tiles-wrapper" id="tiles-wrapper">
@@ -62,12 +62,13 @@
 
 			<script type="text/javascript">
 				(function($){
-					window.onload=function() {
-						// below line is to vertical scroll big image.
-						$("#img-wrapper").imageScroller({scroll:"vertical"});
-						$("#tiles-wrapper").imageScroller({scroll:"horizontal"});
-					}
+					// below line is to vertical scroll big image.
+					$("#img-wrapper").imageScroller({scroll:"vertical"});
+					$("#tiles-wrapper").imageScroller({scroll:"horizontal"});
 					
+					$(".tiles-wrapper img").click(function(){
+						$(".img-wrapper > img").attr("src", $(this).attr("src"));
+					});
 				})(jQuery)
 			</script>
 
